@@ -105,7 +105,7 @@ class DrawerHeader extends StatelessWidget {
             Text(
               "Bubble Shop",
               style: whiteTextStyle.copyWith(
-                  fontSize: 24, fontWeight: FontWeight.w900),
+                  fontSize: 24, fontWeight: FontWeight.w700),
             )
           ],
         ));
