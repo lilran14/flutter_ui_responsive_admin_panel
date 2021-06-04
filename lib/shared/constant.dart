@@ -34,3 +34,7 @@ TextStyle grayTextStyle = TextStyle(
   fontFamily: "Roboto",
   color: kTextGrey,
 );
+
+// Padding & Gap
+double defaultPadding = 20;
+double defaultGap = 10;
