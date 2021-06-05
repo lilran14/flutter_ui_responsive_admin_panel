@@ -10,7 +10,7 @@ class OrdersIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisSpacing: defaultGap,
+      crossAxisSpacing: defaultPadding,
       childAspectRatio: 2,
       shrinkWrap: true,
       crossAxisCount: 4,
