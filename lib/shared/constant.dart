@@ -15,6 +15,7 @@ Color kPrimaryDisable = Color(0xFF858585);
 // Semantic Color
 Color kSemanticRed = Colors.red;
 Color kSematicGreen = Color(0xFF24FF00);
+Color kSemanticPurple = Color(0xFF5E5CE6);
 
 // Text Color
 Color kTextBlack = Color(0xFF1a1a1a);
@@ -30,7 +31,7 @@ TextStyle blackTextStyle = TextStyle(
   fontFamily: "Roboto",
   color: kTextBlack,
 );
-TextStyle grayTextStyle = TextStyle(
+TextStyle greyTextStyle = TextStyle(
   fontFamily: "Roboto",
   color: kTextGrey,
 );
