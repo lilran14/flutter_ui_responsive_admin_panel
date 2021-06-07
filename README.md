@@ -2,15 +2,25 @@
 
 The example of implementation responsive admin panel with flutter.
 
-## Getting Started
+## Screenshot
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Feature
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* [X] Responsive layout via browser (Mobile, Tablet, Desktop, Large Desktop and Extra Large Desktop)
+* [ ] Responsive via mobile device or mobile build (Some text get overflow, need to be fixed)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Package
+
+[Get (State management for controlling sidebar/drawer)](https://pub.dev/packages/get)
+
+[Fl Chart (Package for chart/graph)](https://pub.dev/packages/fl_chart)
+
+[Flutter SVG (Package for loading svg asset)](https://pub.dev/packages/flutter_svg)
+
+[Intl (Package for formatting number)](https://pub.dev/packages/intl)
+
+## Credits
+
+* Inspired by The Flutter Ways tutorial on youtube, [check here! ](https://www.youtube.com/watch?v=_uOgXpEHNbc)
+* [Roboto Font by Christian Robertson](https://fonts.google.com/specimen/Roboto)
