@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_ui_responsive_admin_panel/responsive.dart';
 import 'package:intl/intl.dart';
 
 import 'package:flutter_ui_responsive_admin_panel/shared/constant.dart';
@@ -31,8 +32,21 @@ class OrdersRevenue extends StatelessWidget {
           GridView.count(
             shrinkWrap: true,
             crossAxisSpacing: defaultPadding,
-            crossAxisCount: 3,
-            childAspectRatio: 2.9,
+            mainAxisSpacing: defaultPadding,
+            crossAxisCount: Responsive.isDesktop(context) ||
+                    Responsive.isMobile(context) ||
+                    Responsive.isTablet(context)
+                ? 1
+                : 3,
+            childAspectRatio: Responsive.isXtraLargeDesktop(context)
+                ? 2.9
+                : Responsive.isDesktop(context)
+                    ? 5.75
+                    : Responsive.isMobile(context)
+                        ? 4.72
+                        : Responsive.isTablet(context)
+                            ? 6.76
+                            : 2.1,
             children: [
               RevenueIndicator(),
               OrderIndicator(),
@@ -118,6 +132,7 @@ class RevenueIndicator extends StatelessWidget {
           ),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 19,
@@ -129,15 +144,22 @@ class RevenueIndicator extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   NumberFormat.currency(symbol: "\$", decimalDigits: 1)
                       .format(1234.5),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: false,
                   style: whiteTextStyle.copyWith(
                       fontSize: 18, fontWeight: FontWeight.w700),
                 ),
                 Text(
                   '''+ \$123,5 (12%)''',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: false,
                   style: robotoStyle.copyWith(
                       color: kSematicGreen,
                       fontSize: 10,
@@ -171,6 +193,7 @@ class OrderIndicator extends StatelessWidget {
           ),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 19,
@@ -182,6 +205,7 @@ class OrderIndicator extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "50",
@@ -223,6 +247,7 @@ class CustomerIndicator extends StatelessWidget {
           ),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 19,
@@ -234,6 +259,7 @@ class CustomerIndicator extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "20",

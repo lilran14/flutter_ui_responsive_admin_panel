@@ -4,6 +4,7 @@ import 'package:flutter_ui_responsive_admin_panel/pages/dashboard/components/bes
 import 'package:flutter_ui_responsive_admin_panel/pages/dashboard/components/navbar.dart';
 import 'package:flutter_ui_responsive_admin_panel/pages/dashboard/components/orders_indicator.dart';
 import 'package:flutter_ui_responsive_admin_panel/pages/dashboard/components/orders_revenue.dart';
+import 'package:flutter_ui_responsive_admin_panel/responsive.dart';
 import 'package:flutter_ui_responsive_admin_panel/shared/constant.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -22,23 +23,29 @@ class DashboardPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Navbar(),
-            SizedBox(
-              height: defaultPadding,
-            ),
             OrdersIndicator(),
-            SizedBox(
-              height: defaultPadding,
+            if (Responsive.isMobile(context) || Responsive.isTablet(context))
+              Padding(
+                padding: EdgeInsets.only(top: defaultPadding),
+                child: OrdersRevenue(),
+              ),
+            Padding(
+              padding: EdgeInsets.only(top: defaultPadding),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BestSellers(),
+                  if (!Responsive.isMobile(context) &&
+                      !Responsive.isTablet(context))
+                    SizedBox(
+                      width: defaultPadding,
+                    ),
+                  if (!Responsive.isMobile(context) &&
+                      !Responsive.isTablet(context))
+                    OrdersRevenue(),
+                ],
+              ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                BestSellers(),
-                SizedBox(
-                  width: defaultPadding,
-                ),
-                OrdersRevenue(),
-              ],
-            )
           ],
         ),
       ),
