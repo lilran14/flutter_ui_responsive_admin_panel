@@ -30,6 +30,7 @@ class OrdersRevenue extends StatelessWidget {
             height: defaultGap,
           ),
           GridView.count(
+            physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             crossAxisSpacing: defaultPadding,
             mainAxisSpacing: defaultPadding,

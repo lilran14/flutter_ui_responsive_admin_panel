@@ -13,6 +13,7 @@ class OrdersIndicator extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: defaultPadding),
       child: GridView.count(
+        physics: NeverScrollableScrollPhysics(),
         crossAxisSpacing: defaultPadding,
         mainAxisSpacing: Responsive.isMobile(context) ||
                 Responsive.isTablet(context) ||

@@ -29,23 +29,25 @@ class DashboardPage extends StatelessWidget {
                 padding: EdgeInsets.only(top: defaultPadding),
                 child: OrdersRevenue(),
               ),
-            Padding(
-              padding: EdgeInsets.only(top: defaultPadding),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  BestSellers(),
-                  if (!Responsive.isMobile(context) &&
-                      !Responsive.isTablet(context))
+            if (Responsive.isMobile(context) || Responsive.isTablet(context))
+              Padding(
+                padding: EdgeInsets.only(top: defaultPadding),
+                child: BestSellers(),
+              ),
+            if (!Responsive.isMobile(context) && !Responsive.isTablet(context))
+              Padding(
+                padding: EdgeInsets.only(top: defaultPadding),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    BestSellers(),
                     SizedBox(
                       width: defaultPadding,
                     ),
-                  if (!Responsive.isMobile(context) &&
-                      !Responsive.isTablet(context))
                     OrdersRevenue(),
-                ],
+                  ],
+                ),
               ),
-            ),
           ],
         ),
       ),
