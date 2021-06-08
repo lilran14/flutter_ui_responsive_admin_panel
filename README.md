@@ -28,3 +28,4 @@ Download the figma file on figma folder, if you want to remake it from scratch
 
 * Inspired by The Flutter Ways tutorial on youtube, [check here! ](https://www.youtube.com/watch?v=_uOgXpEHNbc)
 * [Roboto Font by Christian Robertson](https://fonts.google.com/specimen/Roboto)
+* [Remix Icon by Jimmy Cheung & Wendy Gao](https://remixicon.com)
